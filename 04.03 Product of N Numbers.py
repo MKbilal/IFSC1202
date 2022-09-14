@@ -1,5 +1,5 @@
-num = int(input("Enter a number: "))
+number = int(input("Enter a number: "))
 factorial = 1
-for i in range(1,num + 1):
-    factorial = factorial*i
+for i in range(1, number + 1):
+    factorial = factorial * i
 print(factorial)
