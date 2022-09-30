@@ -1,5 +1,5 @@
-x = open("06.05 CompareFileA.txt")
-y = open("06.05 CompareFileB.txt")
+x = open("06.05 CompareFileA.txt").readlines()
+y = open("06.05 CompareFileB.txt").readlines()
 Number_x = [] 
 Number_y = []
 for l in x:
