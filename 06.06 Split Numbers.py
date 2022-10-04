@@ -23,13 +23,13 @@ totalnumbers = 0
 for number in f1.readlines():
     number = int(number)
     if isEven(number):
-        f2.write(str(number))
+        f2.write(str(number) + "\n")
         evenCount += 1
     elif isOdd(number):
-        f3.write(str(number))
+        f3.write(str(number) + "\n")
         oddCount += 1
     if isPrime(number):
-        f4.write(str(number))
+        f4.write(str(number) + "\n")
         primeCount += 1
     totalnumbers += 1
 
