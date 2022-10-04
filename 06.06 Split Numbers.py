@@ -1,101 +1,44 @@
-#function isEven that takes a number as an argument
-def isEven(num):
-    
-    #evaluates the expression and return its result
-    #for even numbers num % 2 will be equal to 0, so it will return True, else False
-    return num % 2 == 0
+def isEven(n):
+    return n % 2 == 0  
+def isOdd(n):
+    return n % 2 != 0  
+def isPrime(n):
+    i = 2
+    while i < n:
+        if n % i == 0:
+            return False
+        i += 1
+    if i == n:
+        return True
 
-#function isOdd that takes a number as an argument    
-def isOdd(num):
-    
-    #evaluates the expression and return its result
-    #for odd numbers num % 2 will not be equal to 0, so it will return True, else False
-    return num % 2 != 0
- 
-#function isPrime that takes a number as an argument    
-def isPrime(num):
-    
-    # defining a flag variable
-    flag = False
-    
-    #if num is equal to 1 return False
-    if(num == 1):
-        return False
-        
-    #if num is greater than 1, as all prime numbers are
-    elif num > 1:
-        #checking  for factors
-        for i in range(2, num):
-            if (num % i) == 0:
-                
-                # if factor is found, set flag to True
-                flag = True
-                
-                # break out of loop
-                break
-    #returning the opposite of flag value
-    #if factor is found flag will be True, but it will not be a prime Number
-    #if factor is not found flag will be Fals, but it will be a prime Number
-    return (not flag)
+f1 = open("06.06 Numbers.txt")
+f2 = open("06.06 Evennumbers.txt", 'w')
+f3 = open("06.06 Oddnumbers.txt", 'w')
+f4 = open("06.06 Primenumbers.txt", 'w')
+evenCount = 0
+oddCount = 0
+primeCount = 0
+totalnumbers = 0
 
-#opeining the file "06.06 Numbers.txt" in reading mode  
-inputFile = open("06.06 Numbers.txt","r")
-
-#opening files to store even numbers, odd numbers and prime numbers
-evenNumbersFile = open("06.06 Evennumbers.txt","w+")
-oddNumbersFile = open("06.06 Oddnumbers.txt","w+")
-primeNumbersFiles = open("06.06 Primenumbers.txt","w+")
-
-#intitializing variable to keep count of different numbers
-numCount = 0;
-oddCount = 0;
-evenCount = 0;
-primeCount = 0;
-
-#for loop to iterate thorough lines of inputFile
-for line in inputFile:
-
-    #stripping the line from any whitespace or next line character and converting to integer
-    line = int(line.strip())
-    
-    #increment numCount by 1
-    numCount += 1
-    
-    #if line is an even number
-    if isEven(line):
-        
-        #writing to evenNumbersFile 
-        evenNumbersFile.write(str(line) + "\n")
-        
-        #increment evenCount by 1
+for number in f1.readlines():
+    number = int(number)
+    if isEven(number):
+        f2.write(str(number))
         evenCount += 1
-    
-    #if line is an odd number    
-    elif isOdd(line):
-        
-        #writing to oddNumbersFile 
-        oddNumbersFile.write(str(line) + "\n")
-        
-        #increment oddCount by 1
+    elif isOdd(number):
+        f3.write(str(number))
         oddCount += 1
-      
-    #if line is a prime numbers    
-    if isPrime(line):
-        
-        #writing line to primeNumbersFiles 
-        primeNumbersFiles.write(str(line) + "\n")
-        
-        #increment primeCount by 1
+    if isPrime(number):
+        f4.write(str(number))
         primeCount += 1
+    totalnumbers += 1
 
-#closing all files  
-inputFile.close()        
-evenNumbersFile.close()
-oddNumbersFile.close()
-primeNumbersFiles.close()
+f1.close()
+f2.close()
+f3.close()
+f4.close()
 
-#displaying count of different numbers
-print(evenCount,"even numbers")
-print(oddCount,"odd numbers")
-print(primeCount,"prime numbers")
-print(numCount,"number read")
+print(f"{evenCount} even numbers")
+print(f"{oddCount} odd numbers")
+print(f"{primeCount} prime numbers")
+print(f"{totalnumbers} numbers read")
