@@ -1,3 +1,3 @@
-s=input("Enter the string: ")
+x = input("Enter the string: ")
 
-print(s.replace("1","one"))
+print(x.replace("1","one"))
