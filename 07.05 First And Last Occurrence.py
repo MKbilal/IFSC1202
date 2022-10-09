@@ -1,13 +1,17 @@
-str = input ("Enter a string : ")
-strr = str[::-1]
-ind1 = str.find('f')
-if ind1 == -1:
-  print(0)
+str = input('Enter a string: ')
+x = -1
+y = -1
+
+for index in range(len(str)):
+    if x == -1 and str[index] == 'f':
+        x = index
+        y = index
+    elif str[index] == 'f':
+        y = index
+
+if x == -1:
+    print('0')
+elif x == y:
+    print(x)
 else:
-  ind = strr.find('f')
-  n= len(str)
-  ind2 = n - ind
-  if ind1 == ind2:
-    print (ind1)
-  else:
-    print (ind1, ind2)
+    print(x,y)
