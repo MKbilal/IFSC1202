@@ -1,6 +1,11 @@
-a=[int(s) for s in input().split()]
-elements=0
-for i in range(1,len(a)-1):
-    if a[i - 1] < a[i] > a[i + 1]:
-        elements += 1
-print("Output=",elements)
+values = input("Enter Values Seperated by Spaces: ")
+
+lst = values.split(' ')
+
+for i in range(0,len(lst)):
+
+    if i<len(lst)-1:
+
+        if int(lst[i+1])>int(lst[i]):
+
+            print(int(lst[i+1]))
