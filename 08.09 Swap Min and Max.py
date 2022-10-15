@@ -10,8 +10,6 @@ for x in range(n):
     if nums[x]>nums[max_index]:
         max_index = x
 
-#nums[min_index], nums[max_index] = nums[max_index], nums[min_index]
-
 print("Swapped Minimum and Maximum: ", end = " ")
 for i in range(n):
     print(nums[i], end = " ")
