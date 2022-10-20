@@ -1,31 +1,18 @@
-import sys
-no_of_rows,no_of_cols = input("Enter the Number of Rows and Columns: ").split(" ")
-no_of_cols=int(no_of_cols)
-no_of_rows=int(no_of_rows)
+rows, columns = tuple([int(x) for x in input("Enter the number of rows and columns: ").split()])
+data = []
+for i in range(rows):
+    values = input("Enter a line of data: ").split()
+    data.append([int(x) for x in values])
 
-my_matrix = [[0 for i in range(no_of_rows)] for j in range(no_of_cols)]
+for row in data:
+    for value in row:
+        print(value, end=" ")
+    print()
 
-for i in range(no_of_rows) :
-    my_matrix[i]=list(map(int, input("Enter a line of data: ").split(" ")))
+row, col = 0, 0
+for i in range(rows):
+    for j in range(columns):
+        if data[i][j] > data[row][col]:
+            rowH, colH = i, j
 
-if(len(my_matrix[i])>no_of_cols) :
-    sys.exit("Invalid entry for Columns")
-
-for i in range(no_of_rows) :
-    for j in range(no_of_cols):
-        print(my_matrix[i][j], end = " ")
-
-print()
-
-maximum_number=my_matrix[0][0]
-minimum_row_index=0
-minimum_column_index=0
-
-for i in range(no_of_rows) :
-    for j in range(no_of_cols):
-        if(my_matrix[i][j] > maximum_number) :
-            maximum_number = my_matrix[i][j]
-minimum_row_index=i
-minimum_column_index=j
-
-print("The maximum value "+str(maximum_number)+" occured in row "+str(minimum_row_index)+" column "+str(minimum_column_index))
+print("The maximum value", data[row][col], "occurred in row", row, "and column", col)
