@@ -1,6 +1,6 @@
-from_value = float(input("Enter From Value: "))
-from_unit = input("Enter From Unit (mm,cm,m,km,in,yd,mi): ")
-to_unit = input("Enter To Unit(mm,cm,m,km,in,yd,mi): ")
+fromvalue = float(input("Enter From Value: "))
+fromunit = input("Enter From Unit (mm,cm,m,km,in,yd,mi): ")
+tounit = input("Enter To Unit(mm,cm,m,km,in,yd,mi): ")
 arr = []
 
 with open("09.04 Conversion.txt","r") as file:
@@ -11,23 +11,23 @@ with open("09.04 Conversion.txt","r") as file:
             data[i] = float(data[i])
         arr.append(data)
 
-from_index,to_index = -1, -1
+fromindex,toindex = -1, -1
 
 for i in range(len(arr)):
-    if arr[i][0] == from_unit:
-        from_index = i
+    if arr[i][0] == fromunit:
+        fromindex = i
 
-if from_index == -1:
+if fromindex == -1:
     print("FromUnit is not valid")
     exit(0)
 
 for i in range(len(arr[0])):
-    if arr[0][i] == to_unit:
-        to_index = i
+    if arr[0][i] == tounit:
+        toindex = i
 
-if to_index == -1:
+if toindex == -1:
     print("ToUnit is not valid")
     exit(0)
 
-res = round(from_value * arr[from_index][to_index],7)
-print("{:.1f} {} => {} {}".format(from_value,from_unit,res,to_unit))
+r = round(fromvalue * arr[fromindex][toindex],7)
+print("{:.1f} {} => {} {}".format(fromvalue,fromunit,r,tounit))
