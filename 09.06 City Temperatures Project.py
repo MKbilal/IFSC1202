@@ -14,5 +14,5 @@ for i in range(len(temps)):
 print(f"{'City' : <10}{'Mo' : <10}{'Tu' : <10}{'We' : <10}{'Th' : <10}{'Fr' : <10}{'Sa' : <10}{'Su' : <10}{'Avg' : <10}")
 for i in range(len(temps)):
     for j in range(len(temps[0])):
-        print(f"{temps[i][j] : <10}", end='')
-    print("")
+        print(f"{temps[i][j] : <10}", end = '')
+    print(" ")
