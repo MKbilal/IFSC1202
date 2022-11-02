@@ -1,18 +1,18 @@
 class Student():
-    def __init__(self, firstname, lastname, tnumber, scores):
+    def __init__(self, firstname, lastname, tnumber, score):
         self.FirstName = firstname
         self.LastName = lastname
         self.TNumber = tnumber
-        self.Grades = scores
+        self.Grade = score
     def RunningAverage(self):
         scores = []
-        for grade in self.Grades:
+        for grade in self.Grade:
             if grade != '': scores.append(int(grade))
             else:scores.append(0)
         return sum(scores) / len(scores)
     def TotalAverage(self):
         scores = []
-        for grade in self.Grades:
+        for grade in self.Grade:
             if grade != '':scores.append(int(grade))
         return sum(scores) / len(scores)
     def LetterGrade(self):
