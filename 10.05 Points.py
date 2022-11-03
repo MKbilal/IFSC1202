@@ -16,7 +16,7 @@ def XAngle(A, B):
     angle = math.atan(slope) * 180 / math.pi
     return angle
 def main():
-    file = open("10.05 Points.txt", "r")
+    file = open("10.05 Points.txt")
     print("{:>20s} {:>20s} {:>20s} {:>20s} {:>20s}".format("Point A", "Point B", "Distance", "Midpoint", "Angle"))
     print(
         "{:>20s} {:>20s} {:>20s} {:>20s} {:>20s}".format('-' * 15, '-' * 15, '-' * 15, '-' * 15, '-' * 15))
