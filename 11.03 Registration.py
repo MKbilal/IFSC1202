@@ -21,11 +21,10 @@ class CourseList:
             if self.courseList[c].department == departmenttofind and self.courseList[c].number == numbertofind:
                 return c
     def add_course_from_file(self, filename):
-        file = open(filename, "r")
+        file = open(filename)
         for x in file:
             courseInformation = x.split(",")
-            self.add_course(courseInformation[0], courseInformation[1], courseInformation[2], courseInformation[3],
-                            courseInformation[4].strip())
+            self.add_course(courseInformation[0], courseInformation[1], courseInformation[2], courseInformation[3],courseInformation[4].strip())
     def print_course_list(self):
         for tempCoursee in self.courseList:
             print(tempCoursee)
@@ -78,7 +77,7 @@ class StudentList:
                  numbers, names, room, meetingtimes])
         print(t)
     def add_student_from_file(self, filename):
-        file = open(filename, "r")
+        file = open(filename)
         for f in file:
             studentInformation = f.split(",")
             self.add_student(studentInformation[0], studentInformation[1], studentInformation[2].strip())
@@ -87,7 +86,7 @@ courseList1 = CourseList()
 courseList1.add_course_from_file("11.03 Courses.txt")
 studentList1 = StudentList()
 studentList1.add_student_from_file("11.03 Students.txt")
-regFile = open("11.03 Registration.txt", "r")
+regFile = open("11.03 Registration.txt")
 for i in regFile:
     line = i.split(",")
     tempCourse = courseList1.courseList[courseList1.find_course(line[1], line[2].strip())]
