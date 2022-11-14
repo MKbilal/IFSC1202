@@ -26,11 +26,11 @@ class CourseList:
             courseInformation = x.split(",")
             self.add_course(courseInformation[0], courseInformation[1], courseInformation[2], courseInformation[3],courseInformation[4].strip())
     def print_course_list(self):
-        for tempCoursee in self.courseList:
-            print(tempCoursee)
+        for t in self.courseList:
+            print(t)
 
 class Student:
-    def __init__(self, firstname="", lastname="", tnumber=""):
+    def __init__(self, firstname = "", lastname = "", tnumber = ""):
         self.enrolledCourses = []
         self.firstname = firstname
         self.lastname = lastname
@@ -43,8 +43,8 @@ class StudentList:
         self.studentList = studentList
 
     def add_student(self, firstName, lastName, tnumber):
-        temp = Student(firstName, lastName, tnumber)
-        self.studentList.append(temp)
+        a = Student(firstName, lastName, tnumber)
+        self.studentList.append(a)
     def find_student(self, studenttofind):
         for studentIndex in range(len(self.studentList)):
             if self.studentList[studentIndex].tnumber == studenttofind:
